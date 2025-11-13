@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo lunar</title>
+</head>
+
+<body>
+    <h1>Módulo lunar</h1>
+    <form class="form" action="" method="" id="form-mineral">
+        <div class="column">
+            <div class="row">
+                <!-- identificador -->
+                <div class="container-item">
+                    <label class="label" for="identifier">Identificador: </label>
+                    <input class="input input-text" id="identifier" type="text" name="identifier">
+                </div>
+                <!-- nombre -->
+                <div class="container-item">
+                    <label class="label" for="mineralName">Nombre: </label>
+                    <input class="input input-text" id="mineralName" type="text" name="mineralName">
+                </div>
+                <!-- origen -->
+                <div class="container-item">
+                    <div class="container-input-radio">
+                        <input type="radio" id="igneous" name="mineralOrigin" value="Igneous">
+                        <label for="igneous">Ígneas</label>
+                        <input type="radio" id="sedimentary" name="mineralOrigin" value="Sedimentary">
+                        <label for="sedimentary">Sedimentarias</label>
+                        <input type="radio" id="metamorphic" name="mineralOrigin" value="Metamorphic">
+                        <label for="metamorphic">Metamórficas</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <!-- dureza -->
+                <div class="container-item">
+                    <label class="label" for="hardness">Dureza: </label>
+                    <input class="input input-range" id="hardness" type="range" min="0" max="10" name="hardness"
+                        value="0">
+                </div>
+                <!-- tamaño del grano -->
+                <div class="container-item">
+                    <label class="label" for="grainSize">Tamaño del grano: </label>
+                    <input class="input input-range" id="grainSize" type="range" min="0" max="30" name="grainSize"
+                        value="0">
+                </div>
+                <!-- tamaño del cristal -->
+                <div class="container-item">
+                    <label class="label" for="crystalSize">Tamaño del grano: </label>
+                    <input class="input input-range" id="crystalSize" type="range" min="0" max="10" name="crystalSize"
+                        value="0">
+                </div>
+            </div>
+            <div class="row">
+                <!-- clasificación -->
+                <div class="container-item">
+                    <div class="container-input-radio">
+                        <input type="radio" id="construction" name="classification" value="construction">
+                        <label for="construction">Rocas de construcción</label>
+                        <input type="radio" id="ornamental" name="classification" value="ornamental">
+                        <label for="ornamental">Ornamental</label>
+                        <input type="radio" id="toolmaking" name="classification" value="toolmaking">
+                        <label for="toolmaking">Toolmaking</label>
+                        <input type="radio" id="crushed" name="classification" value="crushed">
+                        <label for="crushed">Crushed stones</label>
+                    </div>
+                </div>
+                <!-- temperatura de formación -->
+                <div class="container-item">
+                    <label for="formationTemperature">Temperatura de formación: </label>
+                    <input type="number" id="formationTemperature" name="formationTemperature" min="-100" max="100"
+                        step="5" value="0">
+                </div>
+                <!-- textura -->
+                <div class="container-item">
+                    <div class="container-input-radio">
+                        <input type="radio" id="glassy" name="texture" value="glassy">
+                        <label for="glassy">Vitrea</label>
+                        <input type="radio" id="aphanitic" name="texture" value="aphanitic">
+                        <label for="aphanitic">Afanítica</label>
+                        <input type="radio" id="phaneritic" name="texture" value="phaneritic">
+                        <label for="phaneritic">Fanerítica</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <button class="form-button" id="submit" type="submit">Enviar</button>
+            </div>
+        </div>
+    </form>
+    <script type="module" src="app.js"></script>
+</body>
