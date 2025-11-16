@@ -5,91 +5,151 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Módulo lunar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="stylesheet" href="./styles.css">
+
+    <!-- fonts -->
+    <!-- orbitron font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+    <!-- sora font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Sora:wght@100..800&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
-    <h1>Módulo lunar</h1>
-    <form class="form" action="" method="" id="form-mineral">
-        <div class="column">
-            <div class="row">
-                <!-- identificador -->
-                <div class="container-item">
-                    <label class="label" for="identifier">Identificador: </label>
-                    <input class="input input-text" id="identifier" type="text" name="identifier">
-                </div>
-                <!-- nombre -->
-                <div class="container-item">
-                    <label class="label" for="mineralName">Nombre: </label>
-                    <input class="input input-text" id="mineralName" type="text" name="mineralName">
-                </div>
-                <!-- origen -->
-                <div class="container-item">
-                    <div class="container-input-radio">
-                        <input type="radio" id="igneous" name="mineralOrigin" value="Igneous">
+    <section class="section form-section">
+        <h1 class="title">Módulo lunar</h1>
+        <form class="form" action="" method="" id="form-mineral">
+            <!-- identificador -->
+            <div class="form-group">
+                <label class="label" for="identifier">Identificador: </label>
+                <input class="input input-text" id="identifier" type="text" name="identifier" minlength="8"
+                    placeholder="AA0000AA" required>
+            </div>
+            <!-- nombre -->
+            <div class="form-group">
+                <label class="label" for="mineralName">Nombre: </label>
+                <input class="input input-text" id="mineralName" type="text" name="mineralName" minlength="2"
+                    placeholder="Nombre del mineral" required>
+            </div>
+            <!-- origen -->
+            <div class="form-group">
+                <ul class="input-radio-list">
+                    <li class="input-radio-item">
+                        <input class="input input-radio" type="radio" id="igneous" name="mineralOrigin" value="igneous">
                         <label for="igneous">Ígneas</label>
-                        <input type="radio" id="sedimentary" name="mineralOrigin" value="Sedimentary">
+                    </li>
+                    <li class="input-radio-item">
+                        <input class="input input-radio" type="radio" id="sedimentary" name="mineralOrigin"
+                            value="sedimentary">
                         <label for="sedimentary">Sedimentarias</label>
-                        <input type="radio" id="metamorphic" name="mineralOrigin" value="Metamorphic">
+                    </li>
+                    <li class="input-radio-item">
+                        <input class="input input-radio" type="radio" id="metamorphic" name="mineralOrigin"
+                            value="metamorphic">
                         <label for="metamorphic">Metamórficas</label>
-                    </div>
-                </div>
+                    </li>
+                </ul>
             </div>
-            <div class="row">
-                <!-- dureza -->
-                <div class="container-item">
-                    <label class="label" for="hardness">Dureza: </label>
-                    <input class="input input-range" id="hardness" type="range" min="0" max="10" name="hardness"
-                        value="0">
-                </div>
-                <!-- tamaño del grano -->
-                <div class="container-item">
-                    <label class="label" for="grainSize">Tamaño del grano: </label>
-                    <input class="input input-range" id="grainSize" type="range" min="0" max="30" name="grainSize"
-                        value="0">
-                </div>
-                <!-- tamaño del cristal -->
-                <div class="container-item">
-                    <label class="label" for="crystalSize">Tamaño del grano: </label>
-                    <input class="input input-range" id="crystalSize" type="range" min="0" max="10" name="crystalSize"
-                        value="0">
-                </div>
             </div>
-            <div class="row">
-                <!-- clasificación -->
-                <div class="container-item">
-                    <div class="container-input-radio">
-                        <input type="radio" id="construction" name="classification" value="construction">
+            <!-- dureza -->
+            <div class="form-group">
+                <label class="label" for="hardness">Dureza: </label>
+                <input class="input input-range" id="hardness" type="range" min="1" max="10" name="hardness" value="1"
+                    oninput="this.nextElementSibling.value = this.value">
+                <output>1</output>
+            </div>
+            <!-- tamaño del grano -->
+            <div class="form-group">
+                <label class="label" for="grainSize">Tamaño del grano: </label>
+                <input class="input input-range" id="grainSize" type="range" min="1" max="30" name="grainSize"
+                    value="1" oninput="this.nextElementSibling.value = this.value">
+                <output>1</output>
+            </div>
+            <!-- tamaño del cristal -->
+            <div class="form-group">
+                <label class="label" for="crystalSize">Tamaño del cristal: </label>
+                <input class="input input-range" id="crystalSize" type="range" min="1" max="10" name="crystalSize"
+                    value="1" oninput="this.nextElementSibling.value = this.value">
+                <output>1</output>
+            </div>
+            <!-- clasificación -->
+            <div class="form-group">
+                <ul class="input-radio-list">
+                    <li class="input-radio-item">
+                        <input class="input input-radio" type="radio" id="construction" name="classification"
+                            value="construction">
                         <label for="construction">Rocas de construcción</label>
-                        <input type="radio" id="ornamental" name="classification" value="ornamental">
-                        <label for="ornamental">Ornamental</label>
-                        <input type="radio" id="toolmaking" name="classification" value="toolmaking">
-                        <label for="toolmaking">Toolmaking</label>
-                        <input type="radio" id="crushed" name="classification" value="crushed">
-                        <label for="crushed">Crushed stones</label>
-                    </div>
-                </div>
-                <!-- temperatura de formación -->
-                <div class="container-item">
-                    <label for="formationTemperature">Temperatura de formación: </label>
-                    <input type="number" id="formationTemperature" name="formationTemperature" min="-100" max="100"
-                        step="5" value="0">
-                </div>
-                <!-- textura -->
-                <div class="container-item">
-                    <div class="container-input-radio">
-                        <input type="radio" id="glassy" name="texture" value="glassy">
+                    </li>
+                    <li class="input-radio-item">
+                        <input class="input input-radio" type="radio" id="ornamental" name="classification"
+                            value="ornamental">
+                        <label for="ornamental">Rocas ornamentales</label>
+                    </li>
+                    <li class="input-radio-item">
+                        <input class="input input-radio" type="radio" id="toolmaking" name="classification"
+                            value="toolmaking">
+                        <label for="toolmaking">Rocas de uso en utensilios para el hombre</label>
+                    </li>
+                    <li class="input-radio-item">
+                        <input class="input input-radio" type="radio" id="crushed" name="classification"
+                            value="crushed">
+                        <label for="crushed">Piedras machacadas</label>
+                    </li>
+                </ul>
+            </div>
+            </div>
+            <!-- temperatura de formación -->
+            <div class="form-group">
+                <label class="label" for="formationTemperature">Temperatura de formación: </label>
+                <input class="input input-number" type="number" id="formationTemperature" name="formationTemperature"
+                    min="-100" max="100" step="5" value="0">
+            </div>
+            <!-- textura -->
+            <div class="form-group">
+                <ul class="input-radio-list">
+                    <li class="input-radio-item">
+                        <input class="input input-radio" type="radio" id="glassy" name="texture" value="glassy">
                         <label for="glassy">Vitrea</label>
-                        <input type="radio" id="aphanitic" name="texture" value="aphanitic">
+                    </li>
+                    <li class="input-radio-item">
+                        <input class="input input-radio" type="radio" id="aphanitic" name="texture" value="aphanitic">
                         <label for="aphanitic">Afanítica</label>
-                        <input type="radio" id="phaneritic" name="texture" value="phaneritic">
+                    </li>
+                    <li class="input-radio-item">
+                        <input class="input input-radio" type="radio" id="phaneritic" name="texture" value="phaneritic">
                         <label for="phaneritic">Fanerítica</label>
-                    </div>
-                </div>
+                    </li>
+                </ul>
             </div>
-            <div class="row">
-                <button class="form-button" id="submit" type="submit">Enviar</button>
             </div>
-        </div>
-    </form>
-    <script type="module" src="app.js"></script>
+            <!-- tipo de validación -->
+            <div class="form-group">
+                <label class="label" for="validator">Tipo de validador:</label>
+                <select class="select select-validator" id="validator">
+                    <option class="option option-validator" value="igneous">Ígneas</option>
+                    <option class="option option-validator" value="metamorphic">Metamórficas</option>
+                    <option class="option option-validator" value="sedimentary">Sedimentarias</option>
+                </select>
+            </div>
+            <!-- formato de salida -->
+            <div class="form-group">
+                <label class="label" for="outputFormat">Formato de salida:</label>
+                <select class="select select-format" id="outputFormat">
+                    <option class="option option-format" value="american">Americano</option>
+                    <option class="option option-format" value="european">Europeo</option>
+                </select>
+            </div>
+            <button class="form-button" id="submit" type="submit">Enviar</button>
+        </form>
+    </section>
+    <section class="section response-section">
+
+    </section>
+    <script type="module" src="./dist/app.js"></script>
 </body>
