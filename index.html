@@ -67,8 +67,8 @@
             <!-- tamaño del grano -->
             <div class="form-group">
                 <label class="label" for="grainSize">Tamaño del grano: </label>
-                <input class="input input-range" id="grainSize" type="range" min="1" max="30" name="grainSize"
-                    value="1" oninput="this.nextElementSibling.value = this.value">
+                <input class="input input-range" id="grainSize" type="range" min="1" max="30" name="grainSize" value="1"
+                    oninput="this.nextElementSibling.value = this.value">
                 <output>1</output>
             </div>
             <!-- tamaño del cristal -->
@@ -145,11 +145,31 @@
                     <option class="option option-format" value="european">Europeo</option>
                 </select>
             </div>
-            <button class="form-button" id="submit" type="submit">Enviar</button>
+            <button class="form-button" id="submit-mineral" type="submit">Enviar</button>
+        </form>
+        <form class="form" action="" method="" id="form-mission">
+            <!-- identificador -->
+            <div class="form-group">
+                <label class="label" for="spacemanIdentifier">Identificador: </label>
+                <input class="input input-text" id="spacemanIdentifier" type="text" name="spacemanIdentifier"
+                    minlength="8" placeholder="AA0000AA" required>
+            </div>
+            <!-- nombre -->
+            <div class="form-group">
+                <label class="label" for="spacemanName">Nombre: </label>
+                <input class="input input-text" id="spacemanName" type="text" name="spacemanName" minlength="2"
+                    placeholder="Nombre del astronauta" required>
+            </div>
+            <!--edad -->
+            <div class="form-group">
+                <label class="label" for="spacemanAge">Edad: </label>
+                <input class="input input-text" id="spacemanAge" type="text" name="spacemanAge" minlength="2"
+                    placeholder="Edad del astronauta" required>
+            </div>
+            <button class="form-button" id="submit-mission" type="submit">Enviar</button>
         </form>
     </section>
-    <section class="section response-section">
-
-    </section>
-    <script type="module" src="./dist/app.js"></script>
+    <section class="section response-section"></section>
+    <script type="module" src="./dist/mineralApp.js"></script>
+    <script type="module" src="./dist/missionApp.js"></script>
 </body>
